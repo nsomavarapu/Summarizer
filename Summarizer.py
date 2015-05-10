@@ -3,7 +3,7 @@ import re
 summary_sent_num = 3
 ignoreList = open('google-10000-english.txt', 'r').read()
 
-def summarize(article_filename):
+def naiveSummarizer(article_filename):
 	f = open(article_filename, 'r')
 	abr = open('abbrev', 'r')
 
@@ -88,6 +88,6 @@ def getSentences(weight_dict, curr_art):
 
 
 if __name__ == '__main__':
-	summ_text, sum_reduction = summarize('extracted_article')
+	summ_text, sum_reduction = naiveSummarizer('extracted_article')
 	print summ_text
 	print "The summary is " + str(sum_reduction * 100) + "% of total"
